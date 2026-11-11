@@ -2340,6 +2340,83 @@ button {
   }
 }
 @media (max-width: 760px) {
+  .dashboard-app {
+    display: block;
+    min-height: 100vh;
+    padding-bottom: 70px;
+  }
+
+  .dashboard-sidebar {
+    position: fixed;
+    z-index: 50;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    min-height: 64px;
+    flex: 0 0 auto;
+    flex-basis: auto;
+    padding: 0 8px;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    border-right: 0;
+    box-shadow: 0 -8px 24px #17203314;
+  }
+
+  .dashboard-sidebar .brand,
+  .dashboard-sidebar .store-switcher,
+  .dashboard-sidebar .profile-card {
+    display: none;
+  }
+
+  .dashboard-sidebar nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .dashboard-sidebar nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dashboard-sidebar .nav-heading,
+  .dashboard-sidebar .nav-divider {
+    display: none;
+  }
+
+  .dashboard-sidebar .sidebar-link {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+  }
+
+  .dashboard-sidebar .sidebar-link.active::before {
+    top: auto;
+    right: 10px;
+    bottom: 3px;
+    left: 10px;
+    width: auto;
+    height: 3px;
+    border-radius: 3px;
+  }
+
+  .dashboard-sidebar .sidebar-link > span:last-child {
+    display: none;
+  }
+
+  .dashboard-main {
+    width: 100%;
+    min-width: 0;
+  }
+
   .dashboard-content {
     padding: 16px 12px 32px;
   }
@@ -3115,6 +3192,78 @@ button {
   }
 }
 
+@media (max-width: 760px) {
+  .dashboard-sidebar {
+    width: 100%;
+    flex: 0 0 auto;
+    flex-basis: auto;
+  }
+
+  .header-actions {
+    align-items: center;
+    gap: 8px;
+  }
+
+  .avatar-trigger {
+    display: grid;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .avatar-trigger .mini-avatar {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px;
+    min-height: 28px;
+    overflow: hidden;
+    border-radius: 50%;
+    aspect-ratio: 1;
+  }
+
+  .avatar-trigger .mini-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .avatar-trigger .avatar-online {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-actions {
+    justify-content: flex-start;
+  }
+
+  .header-popover-wrap {
+    position: static;
+  }
+
+  .header-popover-wrap .notification-popover,
+  .header-popover-wrap .profile-popover {
+    position: fixed;
+    top: 136px;
+    right: auto;
+    left: 12px;
+    width: min(245px, calc(100vw - 24px));
+    margin: 0;
+  }
+
+  .header-popover-wrap .profile-popover {
+    width: min(220px, calc(100vw - 24px));
+  }
+
+  .header-search {
+    order: 2;
+  }
+}
+
 @media (max-width: 480px) {
   .overview-stats {
     grid-template-columns: 1fr;
@@ -3147,6 +3296,87 @@ button {
 
   .auth-legal {
     margin-top: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard-app {
+    display: block;
+    min-height: 100vh;
+    padding-bottom: 70px;
+  }
+
+  .dashboard-sidebar {
+    position: fixed;
+    z-index: 50;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    min-height: 64px;
+    padding: 0 8px;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    border-right: 0;
+    box-shadow: 0 -8px 24px #17203314;
+  }
+
+  .dashboard-sidebar .brand,
+  .dashboard-sidebar .store-switcher,
+  .dashboard-sidebar .profile-card {
+    display: none;
+  }
+
+  .dashboard-sidebar nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .dashboard-sidebar nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dashboard-sidebar .nav-heading,
+  .dashboard-sidebar .nav-divider {
+    display: none;
+  }
+
+  .dashboard-sidebar .sidebar-link {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+  }
+
+  .dashboard-sidebar .sidebar-link.active::before {
+    top: auto;
+    right: 10px;
+    bottom: 3px;
+    left: 10px;
+    width: auto;
+    height: 3px;
+    border-radius: 3px;
+  }
+
+  .dashboard-sidebar .sidebar-link > span:last-child {
+    display: none;
+  }
+
+  .dashboard-main {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .dashboard-content {
+    padding: 16px 12px 32px;
   }
 }
 
@@ -3747,5 +3977,90 @@ button {
 
   .auth-legal {
     margin-top: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard-sidebar {
+    width: 100%;
+    flex: 0 0 auto;
+    flex-basis: auto;
+  }
+}
+
+/* Keep the mobile navigation overrides last so tablet rules cannot undo them. */
+@media (max-width: 760px) {
+  .dashboard-app {
+    display: block;
+    padding-bottom: 70px;
+  }
+
+  .dashboard-sidebar {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 50;
+    width: 100%;
+    height: 64px;
+    min-height: 64px;
+    flex: 0 0 auto;
+    padding: 0 8px;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    border-right: 0;
+    box-shadow: 0 -8px 24px #17203314;
+  }
+
+  .dashboard-sidebar .brand,
+  .dashboard-sidebar .store-switcher,
+  .dashboard-sidebar .profile-card {
+    display: none;
+  }
+
+  .dashboard-sidebar nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .dashboard-sidebar nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dashboard-sidebar .nav-heading,
+  .dashboard-sidebar .nav-divider {
+    display: none;
+  }
+
+  .dashboard-sidebar .sidebar-link {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    border-radius: 12px;
+  }
+
+  .dashboard-sidebar .sidebar-link > span:last-child {
+    display: none;
+  }
+
+  .dashboard-sidebar .sidebar-link.active::before {
+    top: auto;
+    right: 10px;
+    bottom: 3px;
+    left: 10px;
+    width: auto;
+    height: 3px;
+    border-radius: 3px;
+  }
+
+  .dashboard-main {
+    width: 100%;
+    min-width: 0;
   }
 }
